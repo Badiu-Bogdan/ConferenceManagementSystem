@@ -1,0 +1,386 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C0438932-ED65-4358-ADE9-E845D3D0D1DF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ConferenceManagementSystem</RootNamespace>
+    <AssemblyName>ConferenceManagementSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="src\main\domain\AbstractPaper.cs" />
+    <Compile Include="src\main\domain\Author.cs" />
+    <Compile Include="src\main\domain\BiddingResult.cs" />
+    <Compile Include="src\main\domain\BidProposal.cs" />
+    <Compile Include="src\main\domain\Chair.cs" />
+    <Compile Include="src\main\domain\Conference.cs" />
+    <Compile Include="src\main\domain\EvaluationResult.cs" />
+    <Compile Include="src\main\domain\Message.cs" />
+    <Compile Include="src\main\domain\Email.cs" />
+    <Compile Include="src\main\domain\Paper.cs" />
+    <Compile Include="src\main\domain\Participant.cs" />
+    <Compile Include="src\main\domain\Payment.cs" />
+    <Compile Include="src\main\domain\PCMember.cs" />
+    <Compile Include="src\main\domain\Presentation.cs" />
+    <Compile Include="src\main\domain\Review.cs" />
+    <Compile Include="src\main\domain\Room.cs" />
+    <Compile Include="src\main\domain\Schedule.cs" />
+    <Compile Include="src\main\domain\SCM.cs" />
+    <Compile Include="src\main\domain\Section.cs" />
+    <Compile Include="src\main\domain\Topic.cs" />
+    <Compile Include="src\main\domain\ReviewerPaper.cs" />
+    <Compile Include="src\main\domain\User.cs" />
+    <Compile Include="src\main\domain\UserType.cs" />
+    <Compile Include="src\main\domain\Verdict.cs" />
+    <Compile Include="src\main\repository\AbstractPaperRepository.cs" />
+    <Compile Include="src\main\repository\ConferenceRepository.cs" />
+    <Compile Include="src\main\repository\EmailRepository.cs" />
+    <Compile Include="src\main\repository\IRepository.cs" />
+    <Compile Include="src\main\repository\PaperRepository.cs" />
+    <Compile Include="src\main\repository\PaymentRepository.cs" />
+    <Compile Include="src\main\repository\PresentationRepository.cs" />
+    <Compile Include="src\main\repository\RepositoryException.cs" />
+    <Compile Include="src\main\repository\ReviewRepository.cs" />
+    <Compile Include="src\main\repository\UserRepository.cs" />
+    <Compile Include="src\main\service\AbstractPaperService.cs" />
+    <Compile Include="src\main\service\ConferenceService.cs" />
+    <Compile Include="src\main\service\EmailService.cs" />
+    <Compile Include="src\main\service\PaperService.cs" />
+    <Compile Include="src\main\service\PaymentService.cs" />
+    <Compile Include="src\main\service\PresentationService.cs" />
+    <Compile Include="src\main\service\ReviewerPaperService.cs" />
+    <Compile Include="src\main\service\ServiceException.cs" />
+    <Compile Include="src\main\service\UserService.cs" />
+    <Compile Include="src\main\view\AssignChairsToSections.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\main\view\AssignChairsToSections.Designer.cs">
+      <DependentUpon>AssignChairsToSections.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\main\view\AssignReviewersToPapers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\main\view\AssignReviewersToPapers.Designer.cs">
+      <DependentUpon>AssignReviewersToPapers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\main\view\BidProposal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\main\view\BidProposal.Designer.cs">
+      <DependentUpon>BidProposal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\main\view\Chat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\main\view\Chat.Designer.cs">
+      <DependentUpon>Chat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\main\view\ChooseChairForConference.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\main\view\ChooseChairForConference.Designer.cs">
+      <DependentUpon>ChooseChairForConference.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\main\view\ConferenceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\main\view\ConferenceForm.Designer.cs">
+      <DependentUpon>ConferenceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\main\view\DecidePaperVerdict.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\main\view\DecidePaperVerdict.Designer.cs">
+      <DependentUpon>DecidePaperVerdict.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\main\view\Intro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\main\view\Intro.Designer.cs">
+      <DependentUpon>Intro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\main\view\InvitePCMembers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\main\view\InvitePCMembers.Designer.cs">
+      <DependentUpon>InvitePCMembers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\main\view\JoinSession.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\main\view\JoinSession.Designer.cs">
+      <DependentUpon>JoinSession.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\main\view\Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\main\view\Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\main\view\OrganizeConference.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\main\view\OrganizeConference.Designer.cs">
+      <DependentUpon>OrganizeConference.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\main\view\ConferenceEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\main\view\ConferenceEntry.Designer.cs">
+      <DependentUpon>ConferenceEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\main\view\OrganizeSectionsStepThree.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\main\view\OrganizeSectionsStepThree.Designer.cs">
+      <DependentUpon>OrganizeSectionsStepThree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\main\view\PayRegistrationFee CMS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\main\view\PayRegistrationFee CMS.Designer.cs">
+      <DependentUpon>PayRegistrationFee CMS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\main\view\OrganizeSectionsStepOne.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\main\view\OrganizeSectionsStepOne.Designer.cs">
+      <DependentUpon>OrganizeSectionsStepOne.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\main\view\OrganizeSectionsStepTwo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\main\view\OrganizeSectionsStepTwo.Designer.cs">
+      <DependentUpon>OrganizeSectionsStepTwo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\main\view\PostponeConference.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\main\view\PostponeConference.Designer.cs">
+      <DependentUpon>PostponeConference.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\main\view\QueryOtherReviews.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\main\view\QueryOtherReviews.Designer.cs">
+      <DependentUpon>QueryOtherReviews.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\main\view\Registration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\main\view\Registration.Designer.cs">
+      <DependentUpon>Registration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\main\view\ReviewPaper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\main\view\ReviewPaper.Designer.cs">
+      <DependentUpon>ReviewPaper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\main\view\SendEmails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\main\view\SendEmails.Designer.cs">
+      <DependentUpon>SendEmails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\main\view\UploadAbstractPaper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\main\view\UploadAbstractPaper.Designer.cs">
+      <DependentUpon>UploadAbstractPaper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\main\view\UploadFullPaper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\main\view\UploadFullPaper.Designer.cs">
+      <DependentUpon>UploadFullPaper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\main\view\UploadNewAbstractVersion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\main\view\UploadNewAbstractVersion.Designer.cs">
+      <DependentUpon>UploadNewAbstractVersion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\main\view\UploadNewPaperVersion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\main\view\UploadNewPaperVersion.Designer.cs">
+      <DependentUpon>UploadNewPaperVersion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\main\view\UploadPresentation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\main\view\UploadPresentation.Designer.cs">
+      <DependentUpon>UploadPresentation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\main\view\ViewSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\main\view\ViewSchedule.Designer.cs">
+      <DependentUpon>ViewSchedule.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="src\main\view\AssignReviewersToPapers.resx">
+      <DependentUpon>AssignReviewersToPapers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\main\view\AssignChairsToSections.resx">
+      <DependentUpon>AssignChairsToSections.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\main\view\BidProposal.resx">
+      <DependentUpon>BidProposal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\main\view\Chat.resx">
+      <DependentUpon>Chat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\main\view\ChooseChairForConference.resx">
+      <DependentUpon>ChooseChairForConference.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\main\view\ConferenceForm.resx">
+      <DependentUpon>ConferenceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\main\view\DecidePaperVerdict.resx">
+      <DependentUpon>DecidePaperVerdict.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\main\view\Intro.resx">
+      <DependentUpon>Intro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\main\view\InvitePCMembers.resx">
+      <DependentUpon>InvitePCMembers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\main\view\JoinSession.resx">
+      <DependentUpon>JoinSession.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\main\view\Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\main\view\OrganizeConference.resx">
+      <DependentUpon>OrganizeConference.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\main\view\ConferenceEntry.resx">
+      <DependentUpon>ConferenceEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\main\view\OrganizeSectionsStepThree.resx">
+      <DependentUpon>OrganizeSectionsStepThree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\main\view\PayRegistrationFee CMS.resx">
+      <DependentUpon>PayRegistrationFee CMS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\main\view\OrganizeSectionsStepOne.resx">
+      <DependentUpon>OrganizeSectionsStepOne.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\main\view\OrganizeSectionsStepTwo.resx">
+      <DependentUpon>OrganizeSectionsStepTwo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\main\view\PostponeConference.resx">
+      <DependentUpon>PostponeConference.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\main\view\QueryOtherReviews.resx">
+      <DependentUpon>QueryOtherReviews.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\main\view\Registration.resx">
+      <DependentUpon>Registration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\main\view\ReviewPaper.resx">
+      <DependentUpon>ReviewPaper.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\main\view\SendEmails.resx">
+      <DependentUpon>SendEmails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\main\view\UploadAbstractPaper.resx">
+      <DependentUpon>UploadAbstractPaper.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\main\view\UploadFullPaper.resx">
+      <DependentUpon>UploadFullPaper.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\main\view\UploadNewAbstractVersion.resx">
+      <DependentUpon>UploadNewAbstractVersion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\main\view\UploadNewPaperVersion.resx">
+      <DependentUpon>UploadNewPaperVersion.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\DataSources\ConferenceManagementSystem.src.main.domain.AbstractPaper.datasource" />
+    <EmbeddedResource Include="src\main\view\UploadPresentation.resx">
+      <DependentUpon>UploadPresentation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\main\view\ViewSchedule.resx">
+      <DependentUpon>ViewSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\DataSources\ConferenceManagementSystem.src.main.domain.User.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="src\test\domain\" />
+    <Folder Include="src\test\repository\" />
+    <Folder Include="src\test\service\" />
+    <Folder Include="src\test\validator\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\images\conference_main_image.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
